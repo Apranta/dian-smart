@@ -5,24 +5,7 @@ class Login extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->data['nip']	= $this->session->userdata('nip');
-		if (isset($this->data['nip']))
-		{
-			$this->data['role'] = $this->session->userdata('role');
-			if (isset($this->data['role']))
-			{
-				switch ($this->data['role'])
-				{
-					case 'admin':
-						redirect('admin');
-						exit;
-
-					case 'kepala dinas':
-						redirect('kepala-dinas');
-						exit;
-				}
-			}
-		}
+		
 	}
 
 	public function index()

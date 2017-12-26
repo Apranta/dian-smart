@@ -1,58 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
 
-    <title><?= $title ?></title>
+  $this->load->view('includes/header', array('title' => $title));
+?>
 
-    <!-- Bootstrap -->
-    <link href="<?= base_url('assets') ?>/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="<?= base_url('assets') ?>/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="<?= base_url('assets') ?>/vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- Animate.css -->
-    <link href="<?= base_url('assets') ?>/vendors/animate.css/animate.min.css" rel="stylesheet">
 
-    <!-- Custom Theme Style -->
-    <link href="<?= base_url('assets') ?>/build/css/custom.min.css" rel="stylesheet">
-  </head>
-
-  <body class="login">
-    <div>
-      <a class="hiddenanchor" id="signup"></a>
-      <a class="hiddenanchor" id="signin"></a>
-
-      <div class="login_wrapper">
-        <div class="animate form login_form">
-          <section class="login_content">
-            <?= $this->session->flashdata('msg') ?>
-            <?= form_open('login/login-process') ?>
-              <h1>Login Form</h1>
-              <div>
-                <input type="text" class="form-control" placeholder="NIP" name="nip" required />
-              </div>
-              <div>
-                <input type="password" class="form-control" placeholder="Password" name="password" required />
-              </div>
-              <div style="margin-left: 0px !important;">
-                <input type="submit" name="login-submit" value="Login" class="btn btn-lg btn-success btn-block">
-              </div>
-              <!-- <div>
-                  <a class="reset_pass" href="#">Lost your password?</a>
-              </div> -->
-
-              <div class="clearfix"></div>
-            </form>
-          </section>
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox"> Remember Password</label>
+            </div>
+          </div>
+          <a class="btn btn-primary btn-block" href="index.html">Login</a>
+        </form>
+        <div class="text-center">
+          <a class="d-block small mt-3" href="register.html">Register an Account</a>
+          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
         </div>
-
-        
       </div>
     </div>
-  </body>
+  </div>
+    <script src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="<?= base_url('assets/vendor/jquery-easing/jquery.easing.min.js')?>"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="<?= base_url('assets/js/sb-admin.min.js') ?>"></script>
+  </div>
+</body>
+
 </html>
