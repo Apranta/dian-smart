@@ -30,4 +30,11 @@ class Admin extends MY_Controller
 		$this->template($this->data);
 	}
 
+	public function pegawai()
+	{
+		$this->data['title'] 	= 'Pegawai | ' . $this->title;
+		$this->data['content']	= 'admin/data_pegawai';
+		$this->template($this->data);
+	}
+
 }
