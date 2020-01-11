@@ -7,21 +7,14 @@ class Login extends MY_Controller
 		parent::__construct();
 		$this->data['username'] 	= $this->session->userdata('username');
 		$this->data['role']	= $this->session->userdata('role');
-		if (!isset($this->data['role']))
+		if (isset($this->data['role']))
 		{
-			switch ($this->data['role']) {
-				case 1:
-					redirect('admin');
-					break;
-				case 2:
-					redirect('admin');
-					break;
-				case 3:
-					redirect('pegawai');
-					break;
+			if($this->data['role'] == 0){
+				redirect('admin');
 			}
-			$this->session->sess_destroy();
-			redirect('login');
+			else{
+				redirect('jurusan');
+			}
 			exit;
 		}
 	}

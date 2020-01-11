@@ -5,8 +5,8 @@ class User_m extends MY_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->data['table_name']  = 'user';
-		$this->data['primary_key'] = 'username';
+		$this->data['table_name']  = 'pengguna';
+		$this->data['primary_key'] = 'id';
 	}
 
 	public function login($data)
@@ -16,7 +16,7 @@ class User_m extends MY_Model
 			return $result;
 		$this->session->set_userdata([
 			'username'	=> $result->username,
-			'role'	=> $result->role
+			'role'	=> $result->id_jurusan
 		]);
 		return $result;
 	}

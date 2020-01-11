@@ -1,11 +1,11 @@
 <?php defined('BASEPATH') || exit('No direct script allowed');
 
-class Nilai_pegawai_m extends MY_Model
+class Barang_m extends MY_Model
 {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->data['table_name']  = 'nilai_pegawai';
+		$this->data['table_name']  = 'barang';
 		$this->data['primary_key'] = 'id';
 	}
 }
